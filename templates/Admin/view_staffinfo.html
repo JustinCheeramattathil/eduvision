@@ -1,0 +1,46 @@
+{% extends"Admin/admin_index.html" %}
+{% block body %}
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>Untitled Document</title>
+</head>
+
+<body><form action="" method="get">
+<table width="525" height="89" border="1"class="table-secondary">
+  <tr>
+    <th width="26" scope="row">#</th>
+    <td width="74">Staff name</td>
+    <td width="51">Department</td>
+    <td width="45">Email</td>
+    <td width="50">Phone number</td>
+    <td width="46">Qualifications</td>
+    <td width="47">House</td>
+    <td width="73">Place</td>
+    <td width="55">PIN</td>
+    <td width="55">Post</td>
+    <td width="55">&nbsp;</td>
+  </tr>
+    {% for i in res %}
+  <tr>
+    <th scope="row">{{ loop.index }}</th>
+    <td>&nbsp;{{ i['staff_name'] }}</td>
+    <td>&nbsp;{{ i['department'] }}</td>
+    <td>&nbsp;{{ i['email'] }}</td>
+    <td>&nbsp;{{ i['phone'] }}</td>
+    <td>&nbsp;{{ i['qualification'] }}</td>
+    <td>&nbsp;{{ i['house'] }}</td>
+    <td>&nbsp;{{ i['place'] }}</td>
+    <td>&nbsp;{{ i['pin'] }}</td>
+    <td>&nbsp;{{ i['post'] }}</td>
+    <td><p><a href="/editstaffinfo/{{ i['staffid'] }}">Edit</a></p>
+    <td><a href="/staffinfodelete/{{ i['staffid'] }}" onclick="return confirm('Are you sure...?')">Delete</a></td>
+{#    <td><a href="/subject_allocation/{{ i['staffid'] }}">Allocate Subject    </a></td>#}
+{#    <td><a href="/add_pta_information/{{ i['staffid'] }}">Add as PTA Executive </a></td>#}
+    </tr>
+    {% endfor %}
+</table></form>
+</body>
+</html>
+{% endblock %}

@@ -1,0 +1,36 @@
+{% extends"Admin/admin_index.html" %}
+{% block body %}
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>Untitled Document</title>
+</head>
+
+<body><form action="" method="get">
+  <table width="615" height="105" border="1"class="table-secondary">
+    <tr>
+      <th width="33" height="48" scope="row">#</th>
+      <td width="129">first_name</td>
+        <td width="129">last_name</td>
+      <td width="75">date</td>
+      <td width="162">penalty reason</td>
+      <td width="75">dues</td>
+      <td width="67">&nbsp;</td>
+    </tr>
+       {% for i in res %}
+    <tr>
+      <th scope="row">{{loop.index }}</th>
+      <td>{{ i['first_name']}}</td>
+         <td>{{ i['last_name']}}</td>
+      <td>&nbsp;{{ i['date']}}</td>
+      <td>&nbsp;{{ i['penaltyreason']}}</td>
+      <td>{{i['due_amount']}}</td>
+      <td><a href="/edit_fine/{{ i['fineid'] }}">Edit</a></td>
+    </tr>
+       {% endfor %}
+  </table>
+</form>
+</body>
+</html>
+{% endblock %}

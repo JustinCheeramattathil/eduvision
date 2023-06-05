@@ -1,0 +1,47 @@
+{% extends"Admin/admin_index.html" %}
+{% block body %}
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>Untitled Document</title>
+</head>
+
+<body>
+<form id="form1" name="form1" method="get" action="">
+  <table width="508" height="76" border="1"class="table-secondary">
+    <tr>
+      <th width="44" scope="row">#</th>
+      <td width="120">Admission number</td>
+      <td width="82">Firstname</td>
+      <td width="71">Lastname</td>
+      <td width="23">DOB</td>
+      <td width="13">Course</td>
+      <td width="29">Semester</td>
+      <td width="29">Quota</td>
+      <td width="39">&nbsp;</td>
+    </tr>
+      {% for i in data %}
+    <tr>
+      <th scope="row">{{ loop.index }}</th>
+           <td>{{ i['admission_number'] }}</td>
+      <td>&nbsp;{{ i['first_name']}}</td>
+      <td>&nbsp;{{ i['last_name']}}</td>
+           <td>&nbsp;{{ i['dob']}}</td>
+        <td>&nbsp;{{ i['course_name']}}</td>
+          <td>&nbsp;{{ i['semester']}}</td>
+
+        <td>&nbsp;{{ i['quota']}}</td>
+
+
+
+        <td><a href="/edit_student/{{ i['stud_id'] }}">EDIT</a></td>
+        <td><a href="/delete_student/{{ i['stud_id'] }}" onclick="return confirm('Are you sure...?')">DELETE</a></td>
+        <td><a href="/view_stud_parent/{{ i['stud_id'] }}">View Parent</a></td>
+    </tr>
+      {% endfor %}
+  </table>
+</form>
+</body>
+</html>
+{% endblock %}

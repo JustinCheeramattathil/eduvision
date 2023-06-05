@@ -1,0 +1,43 @@
+{% extends"Admin/admin_index.html" %}
+{% block body %}
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>Untitled Document</title>
+</head>
+
+<body><form action="" method="get">
+  <table width="531" height="97" border="1"class="table-secondary">
+    <tr>
+      <th scope="row">#</th>
+      <td>parent name</td>
+      <td>email</td>
+      <td>phone</td>
+      <td>house</td>
+        <td>place</td>
+      <td>post</td>
+      <td>pin</td>
+      <td>occupation</td>
+      <td>&nbsp;relation with student</td>
+    </tr>
+      {% for i in data %}
+    <tr>
+      <th scope="row">&nbsp;{{ loop.index }}</th>
+      <td>{{ i['parent_name'] }}</td>
+      <td>&nbsp;{{ i['email'] }}</td>
+      <td>&nbsp;{{ i['phone'] }}</td>
+      <td>&nbsp;{{ i['house'] }}</td>
+      <td>&nbsp;{{ i['place'] }}</td>
+      <td>&nbsp;{{ i['post'] }}</td>
+      <td>&nbsp;{{ i['pin'] }}</td>
+      <td>&nbsp;{{ i['occupation'] }}</td>
+        <td>&nbsp;{{ i['relation_with_student'] }}</td>
+      <td><a href="/edit_parent/{{ i['parent_id'] }}">Edit</a></td>
+    </tr>
+      {% endfor %}
+  </table>
+</form>
+</body>
+</html>
+{% endblock %}

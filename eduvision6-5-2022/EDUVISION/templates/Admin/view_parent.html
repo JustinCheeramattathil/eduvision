@@ -1,0 +1,42 @@
+{% extends 'Admin/admin_index.html' %}
+{% block body %}<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>Untitled Document</title>
+</head>
+
+<body><form action="" method="get">
+  <table width="531" height="97" border="1"class="table-secondary">
+    <tr>
+      <th width="8" scope="row">#</th>
+
+      <td width="76">parent name</td>
+      <td width="73">email</td>
+      <td width="32">phone</td>
+      <td width="89">house</td>
+      <td width="33">place</td>
+      <td width="26">post</td>
+      <td width="18">pin</td>
+      <td width="68">occupation</td>
+      <td width="14">Relation with student</td>
+    </tr>
+      {% for i in res %}
+    <tr>
+      <th scope="row">&nbsp;{{ loop.index }}</th>
+      <td>&nbsp;{{ i['parent_name'] }}</td>
+      <td>&nbsp;{{ i['email'] }}</td>
+      <td>{{ i['phone'] }}</td>
+      <td>{{ i['house'] }}</td>
+      <td>&nbsp;{{ i['place'] }}</td>
+      <td>{{ i['post'] }}</td>
+      <td>{{ i['pin'] }}</td>
+      <td>&nbsp;{{ i['occupation'] }}</td>
+      <td>{{ i['relation_with_student'] }}</td>
+        <td><a href="/parents_delete/{{ i['parent_id'] }}">delete</a></td><br>
+      {% endfor %}
+  </table>
+</form>
+</body>
+</html>
+{% endblock %}

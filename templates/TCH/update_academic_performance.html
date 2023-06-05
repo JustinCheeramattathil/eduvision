@@ -1,0 +1,150 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>Untitled Document</title>
+</head>
+
+<body><form action="" method="post">
+<table width="467" height="764" border="1">
+{#  <tr>#}
+{#    <th width="84" height="63" scope="row">Student name</th>#}
+{#    <td colspan="2"><label for="select" ></label>#}
+{#    <select name="select" id="select">#}
+{##}
+{#          <option value="{{ i['stud_id'] }}" {% if loop[''] %}>{{ i['first_name'] }}</option>#}
+{##}
+{#    </select>      <label for="textfield"></label></td>#}
+{#  </tr>#}
+{#  <tr>#}
+{#    <th width="84" height="63" scope="row">Subject name</th>#}
+{#    <td colspan="2"><label for="select" value="{{ loop['subject_name'] }}"></label>#}
+{#    <select name="select2" id="select">#}
+{#        {% for i in data1 %}#}
+{#          <option value="{{ i['subject_id'] }}">{{ i['subject_name'] }}</option>#}
+{#        {% endfor %}#}
+{#    </select>      <label for="textfield"></label></td>#}
+{#  </tr>#}
+  <tr>
+    <th rowspan="7" scope="row">Academic performance</th>
+    <td width="78"><p><br />
+      ARTS<br />
+    </p></td>
+    <td width="287"><table width="200">
+      <tr>
+        <td><label>
+          <input type="radio" name="ARTS" value="EXCELLENT" id="ARTS_0"  {% if loop['arts']=='EXCELLENT' %} checked {% endif %}/>
+          EXCELLENT</label></td>
+      </tr>
+      <tr>
+        <td><label>
+          <input type="radio" name="ARTS" value="VERYGOOD" id="ARTS_1" {% if loop['arts']=='VERYGOOD' %} checked {% endif %} />
+          VERYGOOD</label></td>
+      </tr>
+      <tr>
+        <td><label>
+          <input type="radio" name="ARTS" value="AVERAGE" id="ARTS_2" {% if loop['arts']=='AVERAGE' %} checked {% endif %}/>
+          AVERAGE</label></td>
+      </tr>
+      <tr>
+        <td><label>
+          <input type="radio" name="ARTS" value="BELOW AVERAGE" id="ARTS_3"{% if loop['arts']=='BELOW AVERAGE' %} checked {% endif %} />
+          BELOW AVERAGE</label></td>
+      </tr>
+    </table></td>
+  </tr>
+  <tr>
+    <td>SPORTS</td>
+    <td>
+
+
+    <table width="200">
+      <tr>
+        <td><label>
+          <input type="radio" name="sports" value="EXCELLENT" id="ARTS_0" {% if loop['sports']=='EXCELLENT' %} checked {% endif %} />
+          EXCELLENT</label></td>
+      </tr>
+      <tr>
+        <td><label>
+          <input type="radio" name="sports" value="VERYGOOD" id="ARTS_1" {% if loop['sports']=='VERYGOOD' %} checked {% endif %} />
+          VERYGOOD</label></td>
+      </tr>
+      <tr>
+        <td><label>
+          <input type="radio" name="sports" value="AVERAGE" id="ARTS_2" {% if loop['sports']=='AVERAGE' %} checked {% endif %} />
+          AVERAGE</label></td>
+      </tr>
+      <tr>
+        <td><label>
+          <input type="radio" name="sports" value="BELOW AVERAGE" id="ARTS_3" {% if loop['sports']=='BELOW AVERAGE' %} checked {% endif %} />
+          BELOW AVERAGE</label></td>
+      </tr>
+    </table>
+
+
+    </td>
+  </tr>
+  <tr>
+    <td>STUDIES</td>
+    <td>
+
+    <table width="200">
+      <tr>
+        <td><label>
+          <input type="radio" name="SD" value="EXCELLENT" id="ARTS_0" {% if loop['studies']=='EXCELLENT' %} checked {% endif %} />
+          EXCELLENT</label></td>
+      </tr>
+      <tr>
+        <td><label>
+          <input type="radio" name="SD" value="VERYGOOD" id="ARTS_1" {% if loop['studies']=='VERYGOOD' %} checked {% endif %} />
+          VERYGOOD</label></td>
+      </tr>
+      <tr>
+        <td><label>
+          <input type="radio" name="SD" value="AVERAGE" id="ARTS_2"  {% if loop['studies']=='AVERAGE' %} checked {% endif %}/>
+          AVERAGE</label></td>
+      </tr>
+      <tr>
+        <td><label>
+          <input type="radio" name="SD" value="BELOW AVERAGE" id="ARTS_3" {% if loop['studies']=='BELOW AVERAGE' %} checked {% endif %} />
+          BELOW AVERAGE</label></td>
+      </tr>
+    </table>
+
+    </td>
+  </tr>
+  <tr>
+    <td>CLASS PRESENCE</td>
+    <td><table width="200">
+      <tr>
+        <td><label>
+          <input type="radio" name="CLASS_PRESENCE" value="GOOD" id="CLASSPRESENCE_0" {% if loop['classpresence']=='GOOD' %} checked {% endif %} />
+          GOOD</label></td>
+      </tr>
+      <tr>
+        <td><label>
+          <input type="radio" name="CLASS_PRESENCE" value="BAD" id="CLASSPRESENCE_1" {% if loop['classpresence']=='BAD' %} checked {% endif %} />
+          BAD</label></td>
+      </tr>
+    </table></td>
+  </tr>
+  <tr>
+    <td>AREA OF INTEREST</td>
+    <td><label for="textarea2"></label>
+      <textarea name="textarea2" id="textarea2" cols="45" rows="5" value=" {{ loop['area_of_interest'] }}"></textarea></td>
+  </tr>
+  <tr>
+    <td height="111">ABOUT</td>
+    <td><label for="textarea3"></label>
+      <textarea name="textarea3" id="textarea3" cols="45" rows="5" value="{{ loop['about'] }}"></textarea></td>
+  </tr>
+  <tr>
+    <td height="87" colspan="2"><label for="textarea"></label>
+      <div align="center">
+        <input type="submit" name="ADD" id="ADD" value="ADD" />
+      </div></td>
+    </tr>
+  </table>
+</form>
+</body>
+</html>

@@ -1,0 +1,63 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>Untitled Document</title>
+</head>
+
+<body>
+<form action="" method="post">
+<table width="343" height="436" border="1"class="table-secondary">
+  <tr>
+    <th width="92" scope="row">Staff_name</th>
+    <td width="109"><label for="textfield"></label>
+      <input type="text" name="textfield" id="textfield" value="{{res['staff_name']  }}" /></td>
+  </tr>
+  <tr>
+    <th scope="row">Department</th>
+    <td><label for="textfield2"></label>
+      <input type="text" name="textfield2" id="textfield2" value="{{ res['department'] }}"/></td>
+  </tr>
+  <tr>
+    <th scope="row">Email</th>
+    <td><label for="textfield3"></label>
+      <input type="text" name="textfield3" id="textfield3" value="{{ res['email'] }}"/></td>
+  </tr>
+
+  <tr>
+    <th scope="row">Phone</th>
+    <td><label for="textfield4"></label>
+      <input type="text" name="textfield4" id="textfield4" value="{{ res['phone'] }}"></td>
+  </tr>
+  <tr>
+    <th scope="row">Qualification</th>
+    <td><label for="textarea"></label>
+      <textarea name="textarea" id="textarea" cols="45" rows="5" >{{ res['qualification'] }}</textarea></td>
+  </tr>
+  <tr>
+    <th scope="row">House</th>
+    <td><label for="textarea2"></label>
+      <textarea name="textarea2" id="textarea2" cols="45" rows="5" >{{ res['house'] }}</textarea></td>
+  </tr>
+  <tr>
+    <th scope="row">Place</th>
+    <td><label for="textfield5"></label>
+      <input type="text" name="textfield5" id="textfield5" value="{{ res['place'] }}"></td>
+  </tr>
+  <tr>
+    <th scope="row">PIN</th>
+    <td><label for="textfield6"></label>
+      <input type="text" name="textfield6" id="textfield6" value="{{ res['pin'] }}"></td>
+  </tr>
+  <tr>
+    <th scope="row">Post</th>
+    <td><label for="textfield7"></label>
+      <input type="text" name="textfield7" id="textfield7" value="{{ res['post'] }}"></td>
+  </tr>
+  <tr>
+    <th colspan="2" scope="row"><input type="submit" name="button" id="button" value="Upload" /></th>
+    </tr>
+</table>
+</form>
+</body>
+</html>

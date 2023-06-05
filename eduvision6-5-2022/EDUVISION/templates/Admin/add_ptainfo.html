@@ -1,0 +1,67 @@
+{% extends 'Admin/admin_index.html' %}
+{% block body %}<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>Untitled Document</title>
+</head>
+
+<body><form action="" method="post">
+<table   border="1" class="table-secondary" >
+      <tr>
+    <th scope="row"><label for="select"></label>
+      Choose</th>
+    <td><select name="select" id="select">
+{#        <option>--select--</option>#}
+      <option value="teacher">TEACHERS</option>
+      <option value="parent">PARENTS</option>
+    </select></td>
+  </tr>
+    <tr><th></th><td><input type="submit" class="btn btn-secondary ></td></tr></table>
+</form>
+<form action="/add_pta_information" method="post">
+    <table width="291" height="354" border="1" class="table-secondary">
+
+        <tr>
+            <th scope="row">member name</th>
+            <td><select name="select1" id="select"> <option>--select--</option>
+            {% if data %}
+            {% for i in data %}
+                <option value="{{ i['staffid'] }}">{{ i['staff_name'] }}</option>
+
+            {% endfor %}
+            {% endif %}
+
+               {% if data1 %}
+            {% for i in data1 %}
+                <option value="{{ i['parent_id'] }}">{{ i['parent_name'] }}</option>
+            {% endfor %}
+            {% endif %}
+
+
+            </select></td>
+
+
+
+        </tr>
+
+  <tr>
+    <th scope="row">Position</th>
+    <td><label for="textfield"></label>
+    <input type="text" name="textfield" id="textfield" /></td>
+  </tr>
+<tr>
+    <th colspan="2" scope="row"><center><input type="submit" name="button" id="button" value="ADD"  class="btn btn-primary"/></center></th>
+  </tr>
+</table>
+
+
+
+</form>
+</body>
+</html>
+  </table>
+</form>
+</body>
+</html>
+{% endblock %}

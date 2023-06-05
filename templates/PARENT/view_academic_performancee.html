@@ -1,0 +1,45 @@
+{% extends"PARENT/parent_index.html" %}
+{% block body %}<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>Untitled Document</title>
+</head>
+
+<body>
+<form action="" method="get">
+<table width="200" border="1"class="table-secondary">
+  <tr>
+    <th scope="col">#</th>
+    <th scope="col">ARTS</th>
+    <th scope="col">SPORTS</th>
+    <th scope="col">STUDIES</th>
+    <th scope="col">AREA OF INTEREST</th>
+    <th scope="col">CLASS PRESENCE</th>
+    <th scope="col">STUDENT NAME</th>
+    <th scope="col">SUBJECT NAME</th>
+    <th scope="col">ABOUT</th>
+  </tr>
+    {% for i in data %}
+  <tr>
+    <td>&nbsp;{{ loop.index }}</td>
+    <td>&nbsp;{{ i['arts'] }}</td>
+    <td>&nbsp;{{ i['sports'] }}</td>
+    <td>&nbsp;{{ i['studies'] }}</td>
+    <td>&nbsp;{{ i['interest'] }}</td>
+    <td>&nbsp;{{ i['classpresence'] }}</td>
+    <td>&nbsp;{{ i['first_name'] }}</td>
+    <td>&nbsp;{{ i['subject_name'] }}</td>
+    <td>&nbsp;{{ i['about'] }}</td>
+{#    <td><a href="/edit_academic_performence/{{ i['academicid'] }}">Edit</a> <br>#}
+{#        <a href="/delete_academic_performance/{{ i['academicid'] }}">Delete</a></td>#}
+  </tr>
+    {% endfor %}
+</table>
+
+</form>
+</body>
+</html>
+ {% endblock %}
+
+

@@ -1,0 +1,52 @@
+{% extends"Admin/admin_index.html" %}
+{% block body %}
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>Untitled Document</title>
+</head>
+
+<body>
+<form action="/view_subject" method="post">
+    <table width="200" border="1"class="table-secondary">
+        <tr><th scope="row">course</th>
+    <td><label for="textfield"></label>
+      <label for="select2"></label>
+      <select name="select2" id="select">
+          {% for i in data %}
+          <option value="{{ i['course_id'] }}">{{ i['course_name'] }}</option>
+          {% endfor %}
+      </select></td></tr>
+        <tr>
+    <th colspan="2" scope="row"><input type="submit" name="button" id="button" value="SEARCH" /></th>
+    </tr>
+    </table>
+</form>
+<form action="" method="get">
+<table width="200" border="1"class="table-secondary">
+  <tr>
+    <th scope="col">#</th>
+    <th scope="col">SUBJECT</th>
+    <th scope="col">SEMESTER</th>
+    <th scope="col">COURSE NAME</th>
+    <th scope="col">&nbsp;</th>
+  </tr>
+
+    {% for i in p %}
+  <tr>
+    <td>{{ loop.index }}&nbsp;</td>
+    <td>&nbsp;{{ i['subject_name'] }}</td>
+    <td>&nbsp;{{ i['semester'] }}</td>
+    <td>&nbsp;{{ i['course_name'] }}</td>
+    <td><a href="/delete_subject/{{ i['subject_id'] }}"onclick="return confirm('Are you sure...?')">DELETE</a></td>
+    <td><a href="/teacher_allocate/{{ i['course_id'] }}/{{ i['subject_id'] }}">ALLOCATE TEACHER</a></td>
+  </tr>
+    {% endfor %}
+
+</table>
+
+</form>
+</body>
+</html>
+{% endblock %}

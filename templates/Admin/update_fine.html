@@ -1,0 +1,53 @@
+{% extends"Admin/admin_index.html" %}
+{% block body %}
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>Untitled Document</title>
+</head>
+
+<body>
+<form action="" method="post">
+  <table width="381" height="332" border="1"class="table-secondary">
+   
+          <tr>
+      <th height="53" scope="row">Student name</th>
+      <td><label for="textarea"></label>
+
+          <select name="stud">
+
+              <option>--select-- </option>
+              {% for i in d %}
+              <option value="{{ i['stud_id'] }}" {% if i['stud_id']==data['stud_id'] %}selected{% endif %}>{{ i['first_name'] }} {{ i['last_name'] }} </option>
+
+              {% endfor %}
+
+
+          </select>
+
+      </td>
+    </tr>
+   
+    <tr>
+      <th height="53" scope="row">penalty reason</th>
+      <td><label for="textarea"></label>
+      <textarea name="textarea1" id="textarea" cols="45" rows="5">{{ data['penaltyreason'] }}</textarea></td>
+    </tr>
+
+
+
+
+    <tr>
+      <th scope="row">Dues</th>
+      <td><label for="textfield4"></label>
+      <input type="text" name="textfield4" id="textfield4" value="{{ data.due_amount }}"/></td>
+    </tr>
+    <tr>
+      <th height="48" colspan="2" scope="row"><input type="submit" name="button" id="button" value="update" /></th>
+    </tr>
+  </table>
+</form>
+</body>
+</html>
+{% endblock %}

@@ -1,0 +1,33 @@
+{% extends"PARENT/parent_index.html" %}
+{% block body %}<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<form action="" method="post">
+
+<table width="509" height="127" border="1"class="table-secondary">
+    <tr>
+      <th width="53" scope="row">#</th>
+      <td width="93">Date</td>
+      <td width="89">Title</td>
+      <td width="90">content</td>
+{#      <td width="67">&nbsp;</td>#}
+    </tr>
+      {% for i in res %}
+    <tr>
+      <th scope="row">{{ loop.index }}</th>
+      <td>{{ i['date'] }}</td>
+      <td>&nbsp;{{ i['title'] }}</td>
+      <td>{{ i['content'] }}</td>
+{#      <td><a href="/notificationdelete/{{ i['notification_id'] }}" onclick="return confirm('Are you sure...?')">Delete</a></td>#}
+    </tr>
+      {% endfor %}
+  </table>
+
+</form>
+</body>
+</html>
+{% endblock %}

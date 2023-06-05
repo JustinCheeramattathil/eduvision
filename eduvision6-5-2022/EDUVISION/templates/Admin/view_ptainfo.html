@@ -1,0 +1,78 @@
+{#<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">#}
+{#<html xmlns="http://www.w3.org/1999/xhtml">#}
+{#<head>#}
+{#<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />#}
+{#<title>Untitled Document</title>#}
+{#</head>#}
+{##}
+{#<body><form action="" method="post">#}
+{#  <table width="510" height="85" border="1">#}
+{#    <tr>#}
+{#      <th width="75" scope="row">#</th>#}
+{#      <td width="165">Member name</td>#}
+{#      <td width="120">position</td>#}
+{#      <td width="122">&nbsp;</td>#}
+{#    </tr>#}
+{#    {% for i in res1 %}#}
+{#    <tr>#}
+{#    <th scope="row">{{ loop.index }}</th>#}
+{#        <td>&nbsp;{{ i['member_id'] }}</td>#}
+{#        <td>{{ i['position'] }}</td>#}
+{#        <td><a href="#">Edit</a><br>#}
+{#        <a href="/pta_members_delete/{{ i['member_id'] }}">Delete</a></td>#}
+{#    </tr>#}
+{#    {% endfor %}#}
+{##}
+{#  </table>#}
+{#</form>#}
+{#</body>#}
+{#</html>#}
+{% extends 'Admin/admin_index.html' %}
+{% block body %}<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>Untitled Document</title>
+</head>
+
+<body>
+
+<form action="" method="post">
+     <table class="table table-light"  border="0"class="table-secondary">
+    <tr>
+      <th width="75" scope="row">#</th>
+      <td width="165">Member name</td>
+      <td width="120">position</td>
+      <td width="122">&nbsp;</td>
+    </tr>
+     {% if res1 %}
+    {% for i in res1 %}
+    <tr>
+    <th scope="row">{{ loop.index }}</th>
+        <td>&nbsp;{{ i['parent_name'] }}</td>
+        <td>{{ i['position'] }}</td>
+        <td>
+        <a href="/pta_members_delete/{{ i['member_id'] }}"class="btn btn-danger">Delete</a></td>
+    </tr>
+    {% endfor %}
+     {% endif %}
+      {% if data %}
+    {% for i in data %}
+    <tr>
+    <th scope="row">{{ loop.index }}</th>
+        <td>&nbsp;{{ i['staff_name'] }}</td>
+        <td>{{ i['position'] }}</td>
+        <td>
+        <a href="/pta_members_delete/{{ i['member_id'] }}"  class="btn btn-danger">Delete</a></td>
+    </tr>
+    {% endfor %}
+     {% endif %}
+
+  </table>
+
+
+
+</form>
+</body>
+</html>
+{% endblock %}

@@ -1,0 +1,72 @@
+{% extends"Admin/admin_index.html" %}
+{% block body %}
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>Untitled Document</title>
+</head>
+
+<body><form action="" method="post">
+  <table width="285" height="358" border="1"class="table-secondary">
+      <tr>
+      <th scope="row">Firstname</th>
+      <td><label for="textfield8"></label>
+        <input type="text" name="textfield2" id="textfield8" value="{{ loop['first_name'] }}" /></td>
+    </tr>
+          <tr>
+      <th scope="row">lastname</th>
+      <td><label for="textfield9"></label>
+        <input type="text" name="textfield3" id="textfield9" value="{{ loop['last_name'] }}" /></td>
+    </tr>
+         <tr>
+      <th scope="row">Course</th>
+      <td><label for="textfield11"></label>
+        <label for="select2"></label>
+        <select name="select2" id="select2" value="{{ loop['course_id'] }}">
+{#          <option>--select--</option>#}
+            {% for i in d %}
+            <option value="{{ i['course_id'] }}" {% if d['course_id']==i['course_id'] %} selected {% endif %}>{{ i['course_name'] }} </option>
+            {% endfor %}
+
+      </select></td>
+    </tr>
+       <tr>
+      <th scope="row">Semester/Year</th>
+      <td><label for="textfield13"></label>
+      <label for="select3"></label>
+      <label for="textfield14"></label>
+      <input type="text" name="textfield5" id="textfield14" value="{{ loop['semester'] }}"/>
+      </td>
+    </tr>
+    <tr>
+      <th scope="row">Admissionnumber </th>
+      <td><label for="textfield7"></label>
+        <input type="text" name="textfield" id="textfield7" value="{{ loop['admission_number'] }}" /></td>
+    </tr>
+      <tr>
+      <th scope="row">Quota</th>
+      <td><label for="select"></label>
+        <select name="select" id="select" value="{{ loop['quota'] }}">
+          <option {% if "merit" == loop['quota'] %} selected {% endif %}>merit</option>
+          <option {% if "merit" == loop['community'] %} selected {% endif %}>community</option>
+          <option {% if "sports" == loop['quota'] %} selected {% endif %}>sports</option>
+          <option {% if "SC/ST" == loop['quota'] %} selected {% endif %}>SC/ST</option>
+
+      </select></td>
+    </tr>
+    <tr>
+      <th scope="row">DOB</th>
+      <td><label for="textfield10"></label>
+        <label for="textfield16"></label>
+      <input type="date" name="textfield6" id="textfield16" value="{{ loop['dob'] }}" /></td>
+    </tr>
+  <tr>
+      <th colspan="2" scope="row"><center><input type="submit" name="button" id="button" value="RESUBMIT" class="btn btn-primary"/></center></th>
+    </tr>
+  </table>
+</form>
+
+</body>
+</html>
+{% endblock %}
